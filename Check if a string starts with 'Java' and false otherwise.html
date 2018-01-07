@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Check if a string starts with 'Java' and false otherwise</h1>
+<label>Word <input id="word" type="text" title="Enter number only"></label><br>
+<input type="button" onclick="checkWord()" value="string"><p>result:<span id="result"></span></p><br>
+<script>
+    function checkWord() {
+        var str = document.getElementById("word").value;
+        if(str.length < 4){
+            document.getElementById("result").innerHTML = false;
+        }
+        var front = str.substring(0, 4);
+        document.getElementById("result").innerHTML = front === "Java";
+    }
+</script>
+</body>
+</html>
