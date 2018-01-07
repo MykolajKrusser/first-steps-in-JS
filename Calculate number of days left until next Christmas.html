@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h1>Calculate number of days left until next Christmas</h1>
+<body>
+<p id="test"></p>
+<script>
+    var today = new Date();
+    var cmas = new Date(today.getFullYear(), 11, 25);
+    if(today.getMonth() ===11 && today.getDay() > 25){
+        cmas.setFullYear(cmas.getFullYear() + 1);
+    }
+    var oneDay = 1000*60*60*24;
+    document.getElementById("test").innerHTML = Math.ceil((cmas - today)/oneDay) + " days left until Christmas!" + "<br>" +
+        '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR00dl0FGtIj4T5DSdi_ivg7wNq7t1zRqcAQvOffUtkIzXNdYq0IA">';
+</script>
+</body>
+</html>
