@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Calculate multiplication and division of two numbers.html</h1>
+<form>
+    <label>1`st number:<input id="firstNumber" type="text" title="Enter number only"></label><br>
+    <label>2nd number:<input id="secondNumber" type="text" title="Enter number only"></label><br>
+    <input type="button" onclick="MultiplyBy()" value="Multiply"><input type="button" onclick="DivideBy()" value="Divide">
+</form>
+<p>Result is:<span id="result"></span></p>
+<script>
+    function MultiplyBy() {
+        var a = document.getElementById("firstNumber").value;
+        var b = document.getElementById("secondNumber").value;
+        document.getElementById("result").innerHTML = a * b;
+    }
+    function DivideBy() {
+        var a = document.getElementById("firstNumber").value;
+        var b = document.getElementById("secondNumber").value;
+        document.getElementById("result").innerHTML = a / b;
+    }
+</script>
+</body>
+</html>
