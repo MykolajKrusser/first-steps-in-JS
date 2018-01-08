@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Check two given numbers and return true if one of the number is 50 or if their sum is 50</h1>
+<label>1`st number:<input id="firstNumber" type="text" title="Enter number only"></label><br>
+<label>2nd number:<input id="secondNumber" type="text" title="Enter number only"></label><br>
+<input type="button" onclick="Sum()" value="Sum"> <input type="button" onclick="PorN()" value=" integer is positive or negative">
+<p id="result"></p>
+<script>
+    function Sum(){
+        var a = parseInt(document.getElementById("firstNumber").value);
+        var b = parseInt(document.getElementById("secondNumber").value);
+            document.getElementById("result").innerHTML = (a ===50 || b ===50) || (a + b ===50);
+    }
+    function PorN() {
+        var a = parseInt(document.getElementById("firstNumber").value);
+        var b = parseInt(document.getElementById("secondNumber").value);
+        document.getElementById("result").innerHTML = a < 0 && b > 0 || a > 0 && b < 0;
+    }
+</script>
+</body>
+</html>
