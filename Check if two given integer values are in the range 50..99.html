@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Check if two given integer values are in the range 50..99.</h1>
+<label>num 1 <input id="num1" type="text" title="Enter number only"></label><br>
+<label>num 2<input id="num2" type="text" title="Enter number only"></label><br>
+<input type="button" onclick="checkNums()" value="string"><p>result:<span id="result"></span></p><br>
+<script>
+    function checkNums() {
+        var x = parseInt(document.getElementById("num1").value);
+        var y = parseInt(document.getElementById("num2").value);
+        document.getElementById("result").innerHTML = y <= 99 && y >= 50 || x <= 99 && x >= 50;
+    }
+</script>
+</body>
+</html>
