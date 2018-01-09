@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>adding string "Py" in front of word - word <input id="word" type="text" title="Enter number only"></label><br>
+<input type="button" onclick="stringCheck()" value="string"><p>result:<span id="result"></span></p><br>
+<script>
+    function stringCheck(){
+        var str = document.getElementById("word").value;
+        if (str ===null || str ===undefined || str.substring(0,2) ==="Py"){
+            document.getElementById("result").innerHTML = str;
+        } else {
+            document.getElementById("result").innerHTML = "Py" + str;
+        }
+    }
+</script>
+</body>
+</html>
