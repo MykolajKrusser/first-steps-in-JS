@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Find largest number from two given</h1>
+<form>
+    1st Number: <input type="text" id="firstNumber" /><br>
+    2nd Number: <input type="text" id="secondNumber" /><br>
+    <input type="button" onClick="check100()" value="Maximal is" />
+</form>
+
+<p>The Result is: <br>
+    <span id="result"></span>
+</p>
+<script>
+    function check100() {
+        var x = document.getElementById("firstNumber").value;
+        var y = document.getElementById("secondNumber").value;
+
+        if (x !== y) {
+            var x1 = Math.abs(x - 100);
+            var y1 = Math.abs(y - 100);
+            if (x1 < y1) {
+                document.getElementById("result").innerHTML = x;
+            }
+            if (y1 < x1) {
+                document.getElementById("result").innerHTML = y;
+            }
+        } else {
+            document.getElementById("result").innerHTML = x;
+        }
+    }
+</script>
+<H1> Check if two numbers are in range 40..60 or in the range 70..100 inclusive</H1>
+<form>
+    1st Number: <input type="text" id="firstNumber1" /><br>
+    2nd Number: <input type="text" id="secondNumber1" /><br>
+    <input type="button" onClick="checkR()" value="Check" />
+</form>
+
+<p>The Result is: <br>
+    <span id="result1"></span>
+</p>
+<script>
+    function checkR() {
+        var x = document.getElementById("firstNumber1").value;
+        var y = document.getElementById("secondNumber1").value;
+        document.getElementById("result1").innerHTML = (x <= 60 && x >= 40 && y <= 60 && y >= 40) || (x <= 100 && x >= 70 && y <= 100 && y >= 70);
+    }
+</script>
+<h1>Write a JavaScript program to find the larger number from the two given positive integers, the two numbers are in the range 40..60 inclusive.</h1>
+<form>
+    1st Number: <input type="text" id="firstNumber2" /><br>
+    2nd Number: <input type="text" id="secondNumber2" /><br>
+    <input type="button" onClick="check2()" value="Check" />
+</form>
+
+<p>The Result is: <br>
+    <span id="result2"></span>
+</p>
+<script>
+    function check2() {
+        var x = document.getElementById("firstNumber2").value;
+        var y = document.getElementById("secondNumber2").value;
+        if(x >= 40 && x <= 60 && y >= 40 && y <= 60){
+            if(x > y){
+                document.getElementById("result2").innerHTML = x;
+            } else{
+                document.getElementById("result2").innerHTML = y;
+            }
+        } else {
+            document.getElementById("result2").innerHTML = "Not in range!!"
+        }
+    }
+</script>
+<h1>Write a JavaScript program to check a given string contains 2 to 4 numbers of a specified character.</h1>
+<form>
+    1st word: <input type="text" id="firstNumber3" /><br>
+    2nd character: <input type="text" id="secondNumber3" /><br>
+    <input type="button" onClick="check3()" value="Check" />
+</form>
+
+<p>The Result is: <br>
+    <span id="result3"></span>
+</p>
+<script>
+    function check3() {
+        var ctr = 0;
+        var str =  document.getElementById("firstNumber3").value;
+        var char = document.getElementById("secondNumber3").value;
+        for (var i = 0; i < str.length; i++){
+            if(str.charAt(i) === char){
+                ctr++
+            }
+        } document.getElementById("result3").innerHTML = ctr >=2 && ctr <=4;
+    }
+</script>
+<h1>Write a JavaScript program to check if the last digit of the three given positive integers is same.</h1>
+<form>
+    1st num <input type="text" id="firstNumber4" /><br>
+    2nd num: <input type="text" id="secondNumber4" /><br>
+    3`d num: <input type="text" id="thirdNumber4" /><br>
+    <input type="button" onClick="check4()" value="Check" />
+</form>
+
+<p>The Result is: <br>
+    <span id="result4"></span>
+</p>
+<script>
+    function check4() {
+        var x = document.getElementById("firstNumber4").value;
+        var y = document.getElementById("secondNumber4").value;
+        var z = document.getElementById("thirdNumber4").value;
+        if (x > 0 && y > 0 && z > 0){
+            var a = x.toString().slice(-1);
+            var b = y.toString().slice(-1);
+            var c = z.toString().slice(-1);
+            document.getElementById("result4").innerHTML = a===b && b===c && c===a;
+        } else {
+            document.getElementById("result4").innerHTML = "Not positive numbers!"
+        }
+    }
+</script>
+</body>
+</html>
