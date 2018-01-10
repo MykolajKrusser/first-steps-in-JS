@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>display the current day and time and printing page</h1>
+<p id="date"></p>
+<button onclick="printPage()">Print Page</button>
+<script>
+    var timer = setInterval(my, 1000);
+    function my() {
+        var today = new Date();
+        var day = today.getDay();
+        var daylist = ["Sunday", "Monday", "Tuesday", "Wednesday ", "Thursday", "Friday", "Saturday"];
+        var hour = today.getHours();
+        var minutes = today.getMinutes();
+        var seconds = today.getSeconds();
+        var prepand = (hour >= 12) ? "PM" : "AM";
+        hour = (hour >= 12) ? hour - 12 : hour;
+        if (hour === 0 && prepand === "PM") {
+
+            if (minutes === 0 && seconds === 0) {
+                hour = 12;
+                prepand = "Noon";
+            } else {
+                hour = 12;
+                prepand = "PM";
+            }
+        }
+        if (hour === 0 && prepand === "AM") {
+
+            if (minutes === 0 && seconds === 0) {
+                hour = 12;
+                prepand = "Midnight";
+            } else {
+                hour = 12;
+                prepand = "AM"
+            }
+        }
+        document.getElementById("date").innerHTML = "Today is " + daylist[day] + "." + "<br>" +
+            "Current time is : " + hour + " " + prepand + " " + minutes + ": " + seconds + ".";
+    }
+    function printPage() {
+        window.print();
+    }
+</script>
+</body>
+</html>
