@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Remove a character at the specified position of a given string and return the new string</h1>
+<label>Word <input id="word" type="text" title="Enter number only"></label><br>
+<label>numberOfChar <input id="chr" type="text" title="Enter number only"></label><br>
+<input type="button" onclick="minusCh()" value="string"><p>result:<span id="result"></span></p><br>
+<script>
+    function minusCh() {
+        var str = document.getElementById("word").value;
+        var numCh = parseInt(document.getElementById("chr").value) - 1;
+        document.getElementById("result").innerHTML = str.substring(0, numCh) + str.substring(numCh + 1, str.length);
+    }
+</script>
+</body>
+</html>
