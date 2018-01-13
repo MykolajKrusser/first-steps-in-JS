@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Check three given numbers, if the three numbers are same return 30 otherwise return 40 and if two numbers are same return 20</h1>
+<form>
+    <label for="firstNumber">num </label><input type="text" id="firstNumber" /><br>
+    <label for="secondNumber">num </label><input type="text" id="secondNumber" /><br>
+    <label for="3Number">num </label><input type="text" id="3Number" /><br>
+    <input type="button" onClick="checkNum()" value="Check" />
+</form>
+<p>The Result is: <br>
+    <span id="result"></span>
+</p>
+<script>
+    function checkNum() {
+        var x = document.getElementById("firstNumber").value;
+        var y = document.getElementById("secondNumber").value;
+        var z = document.getElementById("3Number").value;
+        if (x===y && y===z && z===x){
+            document.getElementById("result").innerHTML = "30";
+        } else if (x===y || y===z || z===x){
+            document.getElementById("result").innerHTML = "20";
+        } else {
+            document.getElementById("result").innerHTML = "40";
+        }
+    }
+</script>
+<h1>Write a JavaScript program to check from three given numbers (non negative integers) that two or all of them have the same rightmost digit.
+</h1>
+<form>
+    <label for="firstNumber1">num </label><input type="text" id="firstNumber1" /><br>
+    <label for="secondNumber1">num </label><input type="text" id="secondNumber1" /><br>
+    <label for="3Number1">num </label><input type="text" id="3Number1" /><br>
+    <input type="button" onClick="checkNum1()" value="Check" />
+</form>
+<p>The Result is: <br>
+    <span id="result1"></span>
+</p>
+<script>
+    function checkNum1() {
+        var x = document.getElementById("firstNumber1").value;
+        var y = document.getElementById("secondNumber1").value;
+        var z = document.getElementById("3Number1").value;
+        var a = x.toString().slice(-1);
+        var b = y.toString().slice(-1);
+        var c = z.toString().slice(-1);
+        if(x > 0 && y > 0 && z > 0){
+            document.getElementById("result1").innerHTML = a===b || b===c || c===a;
+        }
+    }
+</script>
+
+</body>
+</html>
