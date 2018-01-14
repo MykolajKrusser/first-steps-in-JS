@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Write a JavaScript program to check two given non-negative integers and if one of the number (not both) is multiple of 7 or 11.</h1>
+<form>
+    <label for="firstNumber">num 1</label><input type="text" id="firstNumber" /><br>
+    <label for="secondNumber">num 2</label><input type="text" id="secondNumber" /><br>
+    <input type="button" onClick="checkNr()" value="Check" />
+</form>
+<p>The Result is: <br>
+    <span id="result"></span>
+</p>
+<script>
+    function checkNr() {
+        var num = document.getElementById("firstNumber").value;
+        var num2 = document.getElementById("secondNumber").value;
+       document.getElementById("result").innerHTML = (((num % 7===0) || (num % 11===0)) &&
+        ((num2 % 7 !== 0) || (num2 % 11 !==0))) || (((num2 % 7 === 0) || (num2 % 11 ===0)) &&
+        ((num % 7 !== 0) || (num % 11 !==0)));
+    }
+</script>
+<h1>Write a JavaScript program to reverse a given string.</h1>
+<form>
+    <label for="firstNumber1">String</label><input type="text" id="firstNumber1" /><br>
+    <input type="button" onClick="ReversStr()" value="Revers String" />
+</form>
+<p>The Result is: <br>
+    <span id="result1"></span>
+</p>
+<script>
+    function ReversStr() {
+        var str = document.getElementById("firstNumber1").value;
+        document.getElementById("result1").innerHTML = str.split("").reverse().join("");
+    }
+</script>
+<h1>Replace every character in a given string with the character following it in the alphabet</h1>
+<form>
+    <label for="word">String</label><input type="text" id="word" /><br>
+    <input type="button" onClick="changeChar()" value="Change characters on fallowing" />
+</form>
+<p>The Result is: <br>
+    <span id="result2"></span>
+</p>
+<script>
+    function changeChar() {
+        var text = document.getElementById("word").value;
+        var s = text.split("");
+        console.log(s);
+        for (i = 0; i < s.length; i++){
+            switch (s[i]){
+                case " ":
+                    break;
+                case "z":
+                    s[i] = "a";
+                    break;
+                case "Z":
+                    s[i] = "A";
+                    break;
+                default: s[i] = String.fromCharCode(1 + s[i].charCodeAt(0));
+            }
+        } document.getElementById("result2").innerHTML = s.join("");
+    }
+</script>
+<h1>Capitalize the first letter of each word of a given string</h1>
+<form>
+    <label for="word3">String</label><input type="text" id="word3" /><br>
+    <input type="button" onClick="lowUpper()" value="Change characters" />
+</form>
+<p>The Result is: <br>
+    <span id="result3"></span></p>
+<script>
+    function lowUpper() {
+        var text = document.getElementById("word3").value;
+        var s = text.split(" ");
+        for (var i = 0; x = s.length, i < x; i++){
+            s[i] = s[i][0].toUpperCase() + s[i].substr(1);
+        }
+        document.getElementById("result3").innerHTML = s.join(" ");
+    }
+</script>
+
+</body>
+</html>
