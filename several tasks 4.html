@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Write a JavaScript program to convert a given number to hours and minutes.</h1>
+<form>
+    <label for="firstNumber">num </label><input type="text" id="firstNumber" /><br>
+    <input type="button" onClick="makeTime()" value="Check" />
+</form>
+<p>The Result is: <br>
+    <span id="result"></span></p>
+<script>
+    function makeTime() {
+        var num = document.getElementById("firstNumber").value;
+        var hour = Math.floor(num / 60);
+        var min = num % 60;
+        if(hour < 10){
+            hour = "0" + hour;
+        }
+        if (min < 10){
+           min = "0" + min;
+        }
+        document.getElementById("result").innerHTML = hour + ":" + min;
+    }
+</script>
+<h1>Write a JavaScript program to convert the letters of a given string in alphabetical order.</h1>
+<form>
+    <label for="firstNumber2">Word</label><input type="text" id="firstNumber2" /><br>
+    <input type="button" onClick="Sort()" value="Check" />
+</form>
+<p>The Result is: <br>
+    <span id="result2"></span></p>
+<script>
+    function Sort() {
+        var str = document.getElementById("firstNumber2").value;
+        document.getElementById("result2").innerHTML = str.split("").sort().join("");
+    }
+</script>
+<h1>Write a JavaScript program to check if the characters a and b are separated by exactly 3 places anywhere (at least once) in a given string.
+</h1>
+<form>
+    <label for="firstNumber3">Word</label><input type="text" id="firstNumber3" /><br>
+    <input type="button" onClick="test()" value="Check" />
+</form>
+<p>The Result is: <br>
+    <span id="result3"></span></p>
+<script>
+    function test() {
+        var str = document.getElementById("firstNumber3").value;
+        document.getElementById("result3").innerHTML = (/a...b/).test(str) || (/b...a/).test(str);
+    }
+</script>
+<h1>Write a JavaScript program to count the number of vowels of a given string.</h1>
+<form>
+    <label for="firstNumber4">Word</label><input type="text" id="firstNumber4" /><br>
+    <input type="button" onClick="findCh()" value="Check" />
+</form>
+<p>The Result is: <br>
+    <span id="result4"></span></p>
+<script>
+    function findCh() {
+        var str = document.getElementById("firstNumber4").value;
+        document.getElementById("result4").innerHTML = str.replace(/[^aeiou]/g, "").length;
+    }
+</script>
+<h1>Write a JavaScript program to check if a given string contains equal number of p's and t's present.</h1>
+<form>
+    <label for="firstNumber5">Word</label><input type="text" id="firstNumber5" /><br>
+    <input type="button" onClick="findCh2()" value="Check" />
+</form>
+<p>The Result is: <br>
+    <span id="result5"></span></p>
+<script>
+    function findCh2() {
+        var str = document.getElementById("firstNumber5").value;
+        document.getElementById("result5").innerHTML = str.replace(/[^p]/g, "").length===str.replace(/[^t]/g, "").length;
+    }
+</script>
+</body>
+</html>
